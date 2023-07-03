@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
+import { LoginPage } from "./pages/Login"
+import { HomePage } from "./pages/Home"
+import { RegisterPage } from "./pages/Register"
+import { ProfilePage } from "./pages/Profile"
+import { SettingsPage } from "./pages/Settings"
+import { ProtectedRoute } from "./components/ProtectedRoute"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+	return (
+		<Routes>
+			<Route path="/" element={<HomePage />} />
+			<Route path="/login" element={<LoginPage />} />
+			<Route path="/register" element={<RegisterPage />} />
+			<Route
+				path="/profile"
+				element={
+					<ProtectedRoute>
+						<ProfilePage />
+					</ProtectedRoute>
+				}
+			/>
+			<Route
+				path="/settings"
+				element={
+					<ProtectedRoute>
+						<SettingsPage />
+					</ProtectedRoute>
+				}
+			/>
+		</Routes>
+	)
 }
-
-export default App;
