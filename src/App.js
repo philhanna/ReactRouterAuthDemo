@@ -13,7 +13,7 @@ import { SettingsPage } from "./pages/Settings"
 import { AuthLayout } from "./components/AuthLayout"
 
 const getUserData = () =>
-	new Promise((resolve) =>
+	new Promise((resolve, reject) =>
 		setTimeout(() => {
 			const user = window.localStorage.getItem("user")
 			resolve(user)
