@@ -29,7 +29,6 @@ export const router = createBrowserRouter(
 			<Route element={<HomeLayout />}>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/login" element={<LoginPage />} />
-				<Route path="/register" element={<RegisterPage />} />
 			</Route>
 			<Route path="/dashboard" element={<ProtectedLayout />}>
 				<Route path="profile" element={<ProfilePage />} />
