@@ -1,5 +1,7 @@
-export const HomePage = () => (
-    <div>
-        <h1>This is the Home Page</h1>
-    </div>
-)
+import React from "react"
+import { BasicPage } from "../components/BasicPage";
+import Home from "@mui/icons-material/Home";
+
+export const HomePage = () => {
+  return <BasicPage title="Home Page" icon={<Home />} />;
+};
